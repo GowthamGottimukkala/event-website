@@ -30,11 +30,25 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-if (process.env.SERVER_PORT) {
-    app.listen(process.env.SERVER_PORT, function() {
-        console.log(`Express app running on port ${process.env.SERVER_PORT}`);
-    });
-}
 
-module.exports = app;
+const port = process.env.SERVER_PORT || 3001;
+
+app.listen(port, function() {
+    console.log(`Express app running on port ${port}`);
+});
+
+// Your code
+if (process.env.NODE_ENV === "production") {
+    const path = require("path");
+    app.use(express.static(path.resolve(__dirname, 'build')));
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'),function (err) {
+            if(err) {
+                res.status(500).send(err)
+            }
+        });
+    })
+}
+// Your code
+
 
