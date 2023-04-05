@@ -30,9 +30,9 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-if (process.env.PORT) {
-    app.listen(process.env.PORT, function() {
-        console.log(`Express app running on port ${process.env.PORT}`);
+if (process.env.SERVER_PORT) {
+    app.listen(process.env.SERVER_PORT, function() {
+        console.log(`Express app running on port ${process.env.SERVER_PORT}`);
     });
 }
 

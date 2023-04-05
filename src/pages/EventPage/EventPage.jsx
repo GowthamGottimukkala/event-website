@@ -94,9 +94,8 @@ function EventPage(props) {
                                                 {event.attendees.includes(props.user._id) ? (
                                                     <p className="font-weight-bold text-success">Awesome! You have a ticket to this event!</p>
                                                 ) : (
-                                                    event.maxCapacity - event.attendees.length < 10 && (
+        
                                                         <p className="font-weight-bold text-danger">Hurry! Only {event.maxCapacity - event.attendees.length} tickets left!</p>
-                                                    )
                                                 )}
 
                                                 <button
