@@ -31,8 +31,8 @@ app.get('/*', function(req, res) {
 });
 
 if (process.env.PORT) {
-    app.listen(port, function() {
-        console.log(`Express app running on port ${port}`);
+    app.listen(process.env.PORT, function() {
+        console.log(`Express app running on port ${process.env.PORT}`);
     });
 }
 
