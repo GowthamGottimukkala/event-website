@@ -1,3 +1,15 @@
+/* @font-face {
+  font-family: 'Recoleta';
+  src: url('http://anthillrealtors.co.id/wp-content/themes/x-child/fonts/Recoleta.eot');
+  src: url('http://anthillrealtors.co.id/wp-content/themes/x-child/fonts/Recoleta.eot?#iefix') format('embedded-opentype'),
+  url('http://anthillrealtors.co.id/wp-content/themes/x-child/fonts/Recoleta.woff') format('woff'),
+  url('http://anthillrealtors.co.id/wp-content/themes/x-child/fonts/Recoleta.ttf') format('truetype'),
+  url('http://anthillrealtors.co.id/wp-content/themes/x-child/fonts/Recoleta.svg#Recoleta') format('svg');
+} */
+
+.body {
+  background-color: floralwhite;
+}
 .navbar {
     /* background-color: white; */
     min-height: 3.25rem;
@@ -8,33 +20,36 @@
 
 .hello {
     padding: 3rem 1.5rem;
-    background-image: linear-gradient(237deg, #fb542b 0%, #392dd1 100%) !important;
+    background-image: linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%) !important;
     border-radius: 0% 0% 23% 11%;   
-}
+} 
 
 .my-col {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'Recoleta';
     /* text-align: center; */
   }
 
 .my-title {
     font-size: 32px;
     margin-bottom: 20px;
-    color: white;
+    color: darkred;
     font-size: 50px;
-    font-family: 'Poppins',sans-serif!important;
+    /* font-family: 'Poppins',sans-serif!important; */
+    /* font-family: 'Recoleta'; */
     font-weight: 600!important;
   }
   
   .my-text {
     font-size: 18px;
     line-height: 1.5;
-    color: white;
+    color: darkred;
     font-size: 20px;
-    font-family: 'Poppins',sans-serif!important;
+    /* font-family: 'Poppins',sans-serif!important; */
+    /* font-family: 'Recoleta'; */
     /* font-weight: 600!important; */
   }
 

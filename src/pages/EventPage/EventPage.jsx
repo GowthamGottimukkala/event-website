@@ -77,7 +77,7 @@ function EventPage(props) {
                                     </p>
                                     <p>
                                         <strong>Price</strong><br />
-                                        {event.price}/-
+                                        {event.price}$
                                     </p>
                                     <p>
                                         <strong>Food Allowed?</strong><br />

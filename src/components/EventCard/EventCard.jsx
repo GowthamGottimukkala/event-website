@@ -33,7 +33,7 @@ function EventCard(props) {
            <strong>Dates: </strong>
            {dateUtils.eventDate(props.event.startTime, props.event.endTime)}
          </p>
-         <p className="card-text">Price: {props.event.price}</p>
+         <p className="card-text">Price: {props.event.price}$</p>
          <p className="card-text">Address: {props.event.venueName}</p>
          <a className="card-link">
          <Link to={{ pathname: `/events/${props.event._id}` }}>Read More &raquo;</Link>

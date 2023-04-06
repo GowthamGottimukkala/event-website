@@ -19,12 +19,18 @@ const NavMenu = (props) => {
         {/* <li className='nav-item'><NavLink to='/my-events' className="nav-link">Booked-Events</NavLink></li>
         <li className='nav-item'><NavLink to='/my-created-events' className="nav-link">Created-Events</NavLink></li> */}
         <li className="nav-item mr-4">
+            <Link to='events/new' className="nav-link">Create Event</Link>
+        </li>
+        <li className="nav-item mr-4">
+            <Link to='/chatgpt' className="nav-link">Ask ChatGPT</Link>
+        </li>
+        <li className="nav-item mr-4">
             <Link to='logout' onClick={props.handleLogout} className="nav-link">Log Out</Link>
         </li>
     </ul>
     :
     <ul className="navbar-nav ml-auto">
-        <li className='nav-item mr-4'><NavLink to='/events' className="nav-link">Events</NavLink></li>
+        <li className='nav-item mr-4'><NavLink to='/events' className="nav-link">Home</NavLink></li>
         <li className="nav-item mr-4"><NavLink to='/login' className='nav-link'>Log In</NavLink></li>
         <li className="nav-item mr-4"><NavLink to='/signup' className='nav-link'>Sign Up</NavLink></li>
     </ul>;

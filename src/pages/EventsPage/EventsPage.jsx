@@ -5,6 +5,7 @@ import PageHeader from '../../components/PageHeader/PageHeader';
 import EventCard from '../../components/EventCard/EventCard';
 import * as eventAPI from '../../services/events-api';
 import image from "../../homepage.png";
+import EventCarousel from '../EventCarousel/EventCarousel';
 
 
 function EventsPage(props) {
@@ -89,6 +90,7 @@ function EventsPage(props) {
     }, [ props.history ]);
 
     return (
+      <>
         <div className='EventsPage'>
              <section className='hello'>
                     <div className="row">
@@ -103,21 +105,24 @@ function EventsPage(props) {
                         <div className="col"></div>
                     </div>
                     </section>
-            <PageHeader />
 
+            <PageHeader />
+            <div className='container py-3'>
+            <h1 className="event-name">
+                <span>Promoted Events</span>
+            </h1>
+            <div className='row'>
+              <EventCarousel events={filteredEvents} />
+            </div>
+            </div>
+            
+            
             <div className='container py-3'>
                 {isLoaded ? (
                     <>
-                    
                         <h1 className="event-name">
                             <span>Events</span>
                         </h1>
-
-                        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-  {props.user && <Link to='events/new' className='btn btn-primary'>New Event</Link>}
-</div>
-
-
                         <div className="row">
                         <div className="col-sm-2 mb-3">
                             <div className="form-group">
@@ -194,7 +199,7 @@ function EventsPage(props) {
                         <div className="row">
                             {filteredEvents.map((event, idx) => { 
                                 return (
-                                    <div className="col-md-6 col-lg-4" style={{margin: "1rem"}}>
+                                    <div className="col-md-6 col-lg-4">
                                         <EventCard event={event} idx={idx}/>
                                     </div>
                                 );
@@ -207,6 +212,7 @@ function EventsPage(props) {
             </div>
 
         </div>
+        </>
     );
 } 
 
