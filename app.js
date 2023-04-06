@@ -3,11 +3,19 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cors = require('cors');
+const {Configuration, OpenAIApi} = require('openai')
+
 
 require('dotenv').config();
 require('./config/database');
 
 const app = express();
+const configuration = new Configuration({
+    apiKey : process.env.OPENAI_SECRET_KEY,
+});
+const openai = new OpenAIApi(configuration);
+
+
 
 app.use(cors());
 app.use(logger('dev'));
@@ -28,6 +36,26 @@ app.use('/api/events', require('./routes/api/events'));
 // catch-all
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+app.post("/chat", async(req,res) => {
+    
+    const {prompt} = req.body;
+    console.log("received prompt");
+    console.log(prompt);
+    // console.log("Received request with prompt:");
+    // console.log(prompt);
+    // try {
+    //     const response = await openai.createCompletion({
+    //         model: "gpt-3.5-turbo-0301",
+    //         prompt,
+    //     });
+    //     console.log(response);
+    //     return res.send(response.data.choices[0].text);
+    // } catch(error){
+    //     console.log(error);
+    // }
+    return res.send(JSON.stringify("i am chatgpt"));
 });
 
 

@@ -64,8 +64,18 @@ function EventForm(props) {
                     </div>
 
                     <div className="form-group">
+                        <label htmlFor="eventType">Event Type</label>
+                        <input type="text" id="eventType" className="form-control"
+                            name="eventType"
+                            defaultValue={props.event && props.event.eventType}
+                            onChange={props.handleInputChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
                         <label htmlFor="startTime">Start Time</label>
-                        <input type="datetime-local" id="startTime" className="form-control"
+                        <input type="date" id="startTime" className="form-control"
                             name="startTime"
                             defaultValue={sTime}
                             onChange={props.handleInputChange}
@@ -75,7 +85,7 @@ function EventForm(props) {
 
                     <div className="form-group">
                         <label htmlFor="endTime">End Time</label>
-                        <input type="datetime-local" id="endTime" className="form-control"
+                        <input type="date" id="endTime" className="form-control"
                             name="endTime"
                             defaultValue={eTime}
                             onChange={props.handleInputChange}
@@ -98,6 +108,26 @@ function EventForm(props) {
                         <input type="text" id="maxCapacity" className="form-control"
                             name="maxCapacity"
                             defaultValue={props.event && props.event.maxCapacity}
+                            onChange={props.handleInputChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="price">Price</label>
+                        <input type="text" id="price" className="form-control"
+                            name="price"
+                            defaultValue={props.event && props.event.price}
+                            onChange={props.handleInputChange}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="foodAvailability">Food Availability</label>
+                        <input type="text" id="foodAvailability" className="form-control"
+                            name="foodAvailability"
+                            defaultValue={props.event && props.event.foodAvailability}
                             onChange={props.handleInputChange}
                             required
                         />

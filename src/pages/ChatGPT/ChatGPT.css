@@ -1,0 +1,70 @@
+:root {
+    background: #f5f6fa;
+    color: #9c9c9c;
+    font: 1rem "PT Sans", sans-serif;
+  }
+  
+  html,
+  body,
+  .container {
+    height: 100%;
+  }
+  
+  .mychatgpta {
+    color: inherit;
+  }
+  .mychatgpta:hover {
+    color: #7f8ff4;
+  }
+  
+  .mychatgpt.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mychatgpt.uppercase {
+    text-transform: uppercase;
+  }
+  
+  .mychatgpt.btn {
+    display: inline-block;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    transition: all 200ms ease-in;
+    cursor: pointer;
+  }
+  .mychatgpt.btn--primary {
+    background: #7f8ff4;
+    color: black;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 12px 36px;
+  }
+  .mychatgpt.btn--primary:hover {
+    background: #6c7ff2;
+  }
+  .mychatgpt.btn--primary:active {
+    background: #7f8ff4;
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  }
+  .mychatgpt.btn--inside {
+    margin-left: -96px;
+  }
+  
+  .mychatgpt.form__field {
+    margin-top: 5rem;
+    width: 360px;
+    background: whitesmoke;
+    color: black;
+    font: inherit;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    border: 0;
+    outline: 0;
+    padding: 22px 18px;
+  }

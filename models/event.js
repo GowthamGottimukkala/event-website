@@ -44,6 +44,15 @@ const eventSchema = new Schema({
     maxCapacity: {
         type: Number
     },
+    eventType: {
+        type: String
+    },
+    price: {
+        type: Number
+    },
+    foodAvailability : {
+        type: String
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'

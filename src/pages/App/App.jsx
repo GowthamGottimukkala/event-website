@@ -11,6 +11,9 @@ import MyEventsPage from '../MyEventsPage/MyEventsPage';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
+import MyCreatedEvents from '../MyCreatedEvents/MyCreatedEvents';
+import image from "../../homepage.png";
+import ChatGPT from '../ChatGPT/ChatGPT';
 
 class App extends Component {
     constructor() {
@@ -43,12 +46,28 @@ class App extends Component {
 
     render() {
         return (
+            
             <>
+            
                 <Header
                     user={this.state.user}
                     handleLogout={this.handleLogout}
                 />
-                <main>
+                <div>
+                    {/* <section className='hello'>
+                    <div className="row">
+                        <div className="col"></div>
+                        <div className="col my-col">
+                            <h2 className="my-title">Event Buzz</h2>
+                            <p className="my-text">Tired of endless banners and outdated event information? Discover how our new solution for University of Florida students can revolutionize the way you find and promote events!</p>
+                        </div>
+                        <div className="col">
+                        <img src={image} alt="Image" />
+                        </div>
+                        <div className="col"></div>
+                    </div>
+                    </section> */}
+                
                     <Switch>
                         <Route exact path='/' render={props =>
                             <Redirect to='/events' />
@@ -56,6 +75,13 @@ class App extends Component {
 
                         <Route exact path='/events' render={props => 
                             <EventsPage
+                                {...props}
+                                user={this.state.user}
+                            />
+                        }/>
+
+                        <Route exact path='/chatgpt' render={props => 
+                            <ChatGPT
                                 {...props}
                                 user={this.state.user}
                             />
@@ -95,6 +121,15 @@ class App extends Component {
                                 <Redirect to='/login' />
                         }/>
 
+                        <Route exact path='/my-created-events' render={props =>
+                            this.state.user ?
+                                <MyCreatedEvents
+                                    {...props}
+                                    user={this.state.user}
+                                /> :
+                                <Redirect to='/login' />
+                        }/>
+
                         <Route exact path='/signup' render={props => 
                             <SignupPage
                                 {...props}
@@ -116,9 +151,12 @@ class App extends Component {
                             <Redirect to='/' />
                         }/>
                     </Switch>
-                </main>
+                
                 <Footer />
+            </div>
+
             </>
+
         );
     }
 }

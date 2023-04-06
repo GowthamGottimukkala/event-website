@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './MyEventsPage.css';
+// import './MyCreatedEvents.css';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import EventCard from '../../components/EventCard/EventCard';
 import * as eventAPI from '../../services/events-api';
 
-function MyEventsPage(props) {
+function MyCreatedEvents(props) {
 
     // set initial state
     const [events, setEvents] = useState([]);
@@ -22,13 +22,8 @@ function MyEventsPage(props) {
 
                 // filter out events that user has not rsvp'd to
                 const res = results.filter(event => {
-                    let rsvp = false;
-
-                    event.attendees.find(att => {
-                        return rsvp = att._id === props.user._id && true;
-                    });
-
-                    return rsvp;
+                    
+                    return event.user == props.user._id;
                 });
 
                 // set state
@@ -40,7 +35,7 @@ function MyEventsPage(props) {
     }, [ props.history, props.user._id ]);
 
     return (
-        <div className='MyEventsPage'>
+        <div className='MyCreatedEvents'>
 
             <PageHeader />
 
@@ -48,7 +43,7 @@ function MyEventsPage(props) {
                 {isLoaded ? (
                     <>
                         <h1 className="event-name">
-                            <span>Booked Events</span>
+                            <span>My Created Events</span>
                         </h1>
 
                         <div className="row">
@@ -70,4 +65,4 @@ function MyEventsPage(props) {
     );
 } 
 
-export default MyEventsPage;
+export default MyCreatedEvents;

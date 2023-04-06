@@ -68,15 +68,31 @@ function EventPage(props) {
                             <div className="col-lg-4">
                                 <div className="">
                                     <p>
+                                        <strong>Type of Event</strong><br />
+                                        {event.eventType}
+                                    </p>
+                                    <p>
                                         <strong>Date</strong><br />
                                         {dateUtils.eventDate(event.startTime, event.endTime)}
                                     </p>
+                                    <p>
+                                        <strong>Price</strong><br />
+                                        {event.price}/-
+                                    </p>
+                                    <p>
+                                        <strong>Food Allowed?</strong><br />
+                                        {event.foodAvailability}
+                                    </p>
+                                    <p>
+                                        <strong>Address</strong><br />
+                                        <address>
+                                            {event.venueName}
+                                            {event.address}<br />
+                                            {event.city}, {event.state} {event.zip}
+                                        </address>
+                                    </p>
 
-                                    <address>
-                                        <strong>{event.venueName}</strong><br />
-                                        {event.address}<br />
-                                        {event.city}, {event.state} {event.zip}
-                                    </address>
+                                    
 
                                     <Map lat={event.lat} lng={event.lng} />
 

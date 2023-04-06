@@ -53,3 +53,11 @@ export async function uploadImage(files) {
         body: formData
     }).then(res => res.json());
 }
+
+export async function getChatGPTResponse(prompt) {
+    return fetch(`/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt })
+    }).then(res => res.json());
+}

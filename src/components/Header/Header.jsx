@@ -5,24 +5,21 @@ import NavBar from '../NavBar/NavBar';
 
 const Header = (props) => {
     return (
-        <header>
-            <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-
-                <NavLink to='' className="navbar-brand">Event Buzz</NavLink>
-
+        <header className="d-flex justify-content-end w-100 my-header">
+            <nav className="navbar navbar-expand-sm navbar-dark">
+                {/* <NavLink to='' className="navbar-brand">Event Buzz</NavLink> */}
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
                 </button>
-
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <NavBar
-                        user={props.user}
-                        handleLogout={props.handleLogout}
-                    />
+                <NavBar
+                    user={props.user}
+                    handleLogout={props.handleLogout}
+                />
                 </div>
-                
             </nav>
         </header>
+
     );
 };
 

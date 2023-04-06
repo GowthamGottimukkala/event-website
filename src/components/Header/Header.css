@@ -1,5 +1,7 @@
-/* .Header {
+.my-header {
+        min-height: 3.25rem;
+        background-image: linear-gradient(237deg, #fb542b 0%, #392dd1 100%) !important;
+        position: relative;
+        z-index: 30;
+        font-size: 1.5rem;
 }
-
-.Header-link {
-} */
