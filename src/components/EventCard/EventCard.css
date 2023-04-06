@@ -9,7 +9,7 @@
   grid-area: 1 / 1;
   height: auto;
   width: 400px;
-  transform: translateX(10px) rotateY(10deg) rotateX(5deg);
+  transform: scale(0.97);
   background-image: linear-gradient(237deg, grey 0%, white 100%) !important;
   display: flex;
   justify-content: flex-start;
@@ -48,9 +48,9 @@
   margin-top: calc(-1 * var(--bw));
   margin-left: calc(-1 * var(--bw));
   background: transparent;
-  transform: translateX(-10px) rotateY(-10deg) rotateX(5deg) scale(1.03);
+  transform: translateX(-10px) scale(1.03);
   pointer-events: none;
-  border: var(--bw) solid #000;
+  border: var(--bw) solid transparent;
   box-sizing: content-box;
 }
 

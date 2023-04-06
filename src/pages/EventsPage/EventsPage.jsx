@@ -194,8 +194,8 @@ function EventsPage(props) {
                         <div className="row">
                             {filteredEvents.map((event, idx) => { 
                                 return (
-                                    <div className="col-md-6 col-lg-4">
-                                        <EventCard event={event} idx={idx} />
+                                    <div className="col-md-6 col-lg-4" style={{margin: "1rem"}}>
+                                        <EventCard event={event} idx={idx}/>
                                     </div>
                                 );
                             })}

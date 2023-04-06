@@ -23,7 +23,7 @@ function EventCard(props) {
 //     </div>  */}
 
 
- <div class="wrapper">
+ <div class="wrapper" >
 <div className="card">
  <img src={props.event.image ? props.event.image : 'https://i.imgur.com/qHdfdgh.jpg'} alt={props.event.name} className="card-img-top" />
        <div className="card-body">
