@@ -119,22 +119,7 @@ function EventsPage(props) {
 
 
                         <div className="row">
-                          <div className="col-sm-2 mb-3">
-                            <div className="form-group">
-                              <label htmlFor="food-availability">Food Availability:</label>
-                              <select
-                                className="form-control"
-                                id="food-availability"
-                                value={foodAvailability}
-                                onChange={handleFoodAvailabilityChange}
-                              >
-                                <option value="">All</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div className="col-sm-2 mb-3">
+                        <div className="col-sm-2 mb-3">
                             <div className="form-group">
                               <label htmlFor="event-type">Event Type:</label>
                               <select
@@ -151,6 +136,7 @@ function EventsPage(props) {
                               </select>
                             </div>
                           </div>
+                          
                           <div className="col-sm-2 mb-3">
                             <div className="form-group">
                               <label htmlFor="start-date">Start Date:</label>
@@ -187,6 +173,21 @@ function EventsPage(props) {
                                 step="10"
                                 placeholder="All"
                               />
+                            </div>
+                          </div>
+                          <div className="col-sm-2 mb-3">
+                            <div className="form-group">
+                              <label htmlFor="food-availability">Food Availability:</label>
+                              <select
+                                className="form-control"
+                                id="food-availability"
+                                value={foodAvailability}
+                                onChange={handleFoodAvailabilityChange}
+                              >
+                                <option value="">All</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                              </select>
                             </div>
                           </div>
                         </div>
