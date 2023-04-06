@@ -11,7 +11,7 @@
   height: auto;
   width: 370px;
   transform: scale(0.97);
-  background-image: linear-gradient(19deg, white 0%, #DDD6F3 100%) !important;
+  background-image: linear-gradient(19deg, white 0%, whitesmoke 100%) !important;
   display: flex;
   justify-content: flex-start;
   align-items: center;

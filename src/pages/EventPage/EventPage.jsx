@@ -6,12 +6,25 @@ import PageHeader from '../../components/PageHeader/PageHeader';
 import ImageUpload from '../../components/ImageUpload/ImageUpload';
 import * as eventAPI from '../../services/events-api';
 import * as dateUtils from '../../utils/date-utils';
+import shareIcon from "./share.svg";
+
 
 function EventPage(props) {
 
     // set initial state
     const [event, setEvent] = useState({});
     const [isLoaded, setIsLoaded] = useState(false);
+    const [copySuccess, setCopySuccess] = useState(false);
+
+    const handleClick = () => {
+        navigator.clipboard.writeText(window.location.href)
+        .then(() => {
+            setCopySuccess(true);
+        })
+        .catch((error) => {
+            console.error("Error copying to clipboard: ", error);
+        });
+    };
 
     useEffect(() => {
         async function fetchData() {
@@ -67,6 +80,13 @@ function EventPage(props) {
 
                             <div className="col-lg-4">
                                 <div className="">
+                                <div>
+                                <button onClick={handleClick} style={{padding: "0.5rem", marginBottom: "1rem"}}>
+                                    <img src={shareIcon} alt="Share icon" style={{ marginRight: "5px" }} />
+                                    Share Event
+                                </button>
+                                {copySuccess && <p style={{ color: "green" }}>Copied to clipboard!</p>}
+                                </div>
                                     <p>
                                         <strong>Type of Event</strong><br />
                                         {event.eventType}

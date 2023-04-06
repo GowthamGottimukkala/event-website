@@ -55,7 +55,7 @@ app.post("/chat", async(req,res) => {
     // } catch(error){
     //     console.log(error);
     // }
-    return res.send(JSON.stringify("i am chatgpt"));
+    return res.send(JSON.stringify("I am ChatGPT, a conversational AI language model developed by OpenAI. My purpose is to help answer questions and provide assistance to users through natural language conversation."));
 });
 
 
