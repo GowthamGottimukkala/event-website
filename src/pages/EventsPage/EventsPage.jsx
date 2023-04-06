@@ -112,7 +112,7 @@ function EventsPage(props) {
                 <span>Promoted Events</span>
             </h1>
             <div className='row'>
-              <EventCarousel events={filteredEvents} />
+              <EventCarousel events={events} />
             </div>
             </div>
             
